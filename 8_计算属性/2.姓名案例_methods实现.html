@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>2.姓名案例_methods实现</title>
+    <!-- 引入Vue-->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <!--
+        
+    -->
+    <!-- 准备好一个容器 -->
+    <div id="root">
+        姓: <input type="text" v-model:value="firstName"><br/><br/>
+        名: <input type="text" v-model:value="lastName"><br/><br/>
+        全名: <span>{{fullName()}}</span>
+        
+    </div>
+</body>
+
+<script type="text/javascript">
+    Vue.config.productionTip = false // 阻止 vue 在启动时生成生产提示。
+
+    new Vue({
+        el:'#root',
+        data:{
+            firstName:'张',
+            lastName:'三'
+        },
+        methods:{
+            fullName(event){
+                // console.log(this) // 此处的this是vm
+                // console.log(event.target.innerText)
+                // alert('同学你好!')
+                return this.firstName+'-'+this.lastName
+            },
+        }
+    })
+</script>
+</html>
